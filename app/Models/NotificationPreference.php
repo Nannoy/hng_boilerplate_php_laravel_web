@@ -15,9 +15,12 @@ class NotificationPreference extends Model
      *
      * @var array
      */
-    protected $fillable = ['email_notifications',
+    protected $fillable = [
+        'user_id',
+        'email_notifications',
         'push_notifications',
-        'sms_notifications',];
+        'sms_notifications',
+    ];
 
     public function user()
     {

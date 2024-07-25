@@ -26,6 +26,7 @@ use App\Http\Controllers\Api\V1\BlogSearchController;
 use App\Http\Controllers\Api\V1\User\ExportUserController;
 
 use App\Http\Controllers\Api\V1\Organisation\OrganizationMemberController;
+use App\Http\Controllers\Api\V1\NotificationPreferenceController;
 
 use App\Http\Controllers\InvitationAcceptanceController;
 
@@ -104,6 +105,9 @@ Route::prefix('v1')->group(function () {
         Route::get('/jobs', [JobController::class, 'index']);
 
         Route::get('/user/export/{format}', [ExportUserController::class, 'export']);
+
+        //notification
+        Route::post('/settings/notification-settings', [NotificationPreferenceController::class, 'set']);
 
     });
 
